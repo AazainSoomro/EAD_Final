@@ -10,7 +10,7 @@ const TimeSlotForm = () => {
     },
 
     onSubmit: async (values) => {
-      const newTimeSlot = await fetch("http://localhost:3001/new-TimeSlot", {
+      await fetch("http://localhost:3001/new-TimeSlot", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(values),
