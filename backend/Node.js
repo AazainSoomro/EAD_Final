@@ -1,5 +1,6 @@
 import mongoose from "mongoose";
-import Recipe from "./models/Recipe.js";
+import Time_slots from "./models/Time_slots.js";
+import Appointments from "./models/Appointments.js";
 import express from "express";
 import cors from "cors";
 
@@ -19,3 +20,43 @@ try {
 } catch (e) {
   console.log(e);
 }
+
+//post new time slot
+
+app.post("/new-timeSlot", async (req, res) => {
+  const { startTime, endTime, isBooked } = req.body;
+
+  const timeslot = await Time_slots.create({
+    startTime: startTime,
+    endTime: endTime,
+    isBooked: isBooked,
+  });
+  res.json({ timeslot });
+});
+
+// get timeslot
+
+app.get("/", async (req, res) => {
+  const timeSlots = await Time_slots.find();
+  res.json({ timeSlots });
+});
+
+// post appointment
+
+app.post("/new-appointment", async (req, res) => {
+  const { slotId, name, email } = req.body;
+
+  const timeslot = await Time_slots.create({
+    slotId: slotId,
+    name: name,
+    email: email,
+  });
+  res.json({ timeslot });
+});
+
+// get appointment
+
+app.get("/", async (req, res) => {
+  const appointments = await Appointments.find();
+  res.json({ appointments });
+});
