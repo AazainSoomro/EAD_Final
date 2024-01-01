@@ -1,4 +1,5 @@
 import React from "react";
+import { useState, useEffect } from "react";
 
 const dummyData = [
   {
@@ -22,10 +23,41 @@ const dummyData = [
 ];
 
 function BookedAppointments() {
+  const [AllAppointments, setAllAppointments] = useState(second);
+
+  useEffect(() => {
+    const getAppointment = async () => {
+      const data = await fetch("http://localhost:3001/", {});
+      const appointmentData = await data.json();
+      console.log(appointmentData.appointment);
+      setAllAppointments(appointmentData.appointment);
+    };
+
+    getAppointment();
+  }, []);
+
+  //   return (
+  //     <div>
+  //       <h1>Booked Appointments</h1>
+  //       {dummyData.map((item) => (
+  //         <div>
+  //           <div>
+  //             <h1>{item.name}</h1>
+  //             <h1>{item.email}</h1>
+  //           </div>
+  //           <h1>
+  //             {item.startTime} - {item.endTime}
+  //           </h1>
+  //           <button>book</button>
+  //         </div>
+  //       ))}
+  //     </div>
+  //   );
+
   return (
     <div>
       <h1>Booked Appointments</h1>
-      {dummyData.map((item) => (
+      {AllAppointments.map((item) => (
         <div>
           <div>
             <h1>{item.name}</h1>
