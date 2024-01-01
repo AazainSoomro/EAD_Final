@@ -1,12 +1,11 @@
-import { Timestamp } from "mongodb";
 import mongoose from "mongoose";
 
 const AppointmentsSchema = new mongoose.Schema({
-  startTime: { type: Timestamp, required: true },
-  endTime: { type: Timestamp, required: true },
-  isBooked: { type: Boolean, required: true },
+  slotId: { type: Number, required: true },
+  name: { type: String, required: true },
+  email: { type: String, required: true },
 });
 
-const Appointments = mongoose.model("Appointments", recipeSchema);
+const Appointments = mongoose.model("Appointments", AppointmentsSchema);
 
 export default Appointments;

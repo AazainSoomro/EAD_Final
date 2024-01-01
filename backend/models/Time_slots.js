@@ -1,16 +1,12 @@
+import { Timestamp } from "mongodb";
 import mongoose from "mongoose";
 
-const recipeSchema = new mongoose.Schema({
-  title: { type: String, required: true },
-  description: { type: String, required: true },
-  ingredients: { type: [String], required: true },
-  instructions: { type: [String], required: true },
-  image: {
-    type: String,
-    default: "https://pixlr.com/images/index/ai-image-generator-two.webp",
-  },
+const Time_slotsSchema = new mongoose.Schema({
+  startTime: { type: Timestamp, required: true },
+  endTime: { type: Timestamp, required: true },
+  isBooked: { type: Boolean, required: true },
 });
 
-const Recipe = mongoose.model("Recipe", recipeSchema);
+const Time_slots = mongoose.model("Time_slots", Time_slotsSchema);
 
-export default Recipe;
+export default Time_slots;
