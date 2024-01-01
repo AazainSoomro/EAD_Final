@@ -14,7 +14,7 @@ function AvailableTimeSlot({ setCurStartTS, setCurEndTS }) {
 
         <div>
           {dummyDataTimeSlot.map((item) => (
-            <div className="text-4xl">
+            <div>
               <h1>
                 {item.startTime} - {item.endTime}
               </h1>
