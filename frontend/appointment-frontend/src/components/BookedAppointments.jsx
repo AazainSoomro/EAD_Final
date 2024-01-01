@@ -1,26 +1,26 @@
 import React from "react";
 import { useState, useEffect } from "react";
 
-const dummyData = [
-  {
-    startTime: "4:00",
-    endTime: "7:00",
-    name: "Aazain",
-    email: "asdasdsd@gmail.com",
-  },
-  {
-    startTime: "3:00",
-    endTime: "1:00",
-    name: "Aazain",
-    email: "asdasdsd@gmail.com",
-  },
-  {
-    startTime: "6:00",
-    endTime: "3:00",
-    name: "Aazain",
-    email: "asdasdsd@gmail.com",
-  },
-];
+// const dummyData = [
+//   {
+//     startTime: "4:00",
+//     endTime: "7:00",
+//     name: "Aazain",
+//     email: "asdasdsd@gmail.com",
+//   },
+//   {
+//     startTime: "3:00",
+//     endTime: "1:00",
+//     name: "Aazain",
+//     email: "asdasdsd@gmail.com",
+//   },
+//   {
+//     startTime: "6:00",
+//     endTime: "3:00",
+//     name: "Aazain",
+//     email: "asdasdsd@gmail.com",
+//   },
+// ];
 
 function BookedAppointments() {
   const [AllAppointments, setAllAppointments] = useState();
