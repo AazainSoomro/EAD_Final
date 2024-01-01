@@ -36,7 +36,7 @@ app.post("/new-timeSlot", async (req, res) => {
 
 // get timeslot
 
-app.get("/", async (req, res) => {
+app.get("/timeslots", async (req, res) => {
   const timeSlots = await Time_slots.find();
   res.json({ timeSlots });
 });
@@ -56,7 +56,7 @@ app.post("/new-appointment", async (req, res) => {
 
 // get appointment
 
-app.get("/", async (req, res) => {
+app.get("/appointments", async (req, res) => {
   const appointments = await Appointments.find();
   res.json({ appointments });
 });

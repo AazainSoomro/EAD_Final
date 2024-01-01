@@ -23,11 +23,11 @@ const dummyData = [
 ];
 
 function BookedAppointments() {
-  const [AllAppointments, setAllAppointments] = useState(second);
+  const [AllAppointments, setAllAppointments] = useState();
 
   useEffect(() => {
     const getAppointment = async () => {
-      const data = await fetch("http://localhost:3001/", {});
+      const data = await fetch("http://localhost:3001/appointments", {});
       const appointmentData = await data.json();
       console.log(appointmentData.appointment);
       setAllAppointments(appointmentData.appointment);
